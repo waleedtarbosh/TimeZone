@@ -39,9 +39,9 @@ The website features a stunning hero section with CSS keyframe animations, an in
 ## 🎥 Application Demo 🎬
 
 <p align="center">
-  <a href="https://github.com/user-attachments/assets/3c042dc6-4538-45b2-9369-41ead5fa9252">
-    <img src="https://github.com/user-attachments/assets/3c042dc6-4538-45b2-9369-41ead5fa9252" alt="Time Zone Demo Video" width="80%"/>
-  </a>
+
+https://github.com/user-attachments/assets/3c042dc6-4538-45b2-9369-41ead5fa9252
+
 </p>
 
 ---
