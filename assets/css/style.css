@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .row{
 display: flex;
@@ -27,9 +28,10 @@ h1,h2,h3,h4,h5,h6{
 .container{
     width: 78%;
     margin: auto;
+    padding: 0 15px;
 }
 body{
- 
+    overflow-x: hidden;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
 }
@@ -81,7 +83,7 @@ nav .logo{
 }
 nav .nav-list{
     width: 60%;
-    margin-right:200px ;
+    margin-right: 50px;
     margin-bottom: 8px;
    
    
@@ -247,39 +249,36 @@ label,#inpChecked{
     
     
     header .header-content{
-        padding: 0px 140px 0px 0px ;
+        padding: 0px 20px 0px 0px;
        
     }
     .container{
-        width:fit-content;
+        width: 90%;
     }
     
- header .header-content .hh{
-    font-size: 50px;
-    line-height: 1.2;
-    width: 168%;
-   }
-   header .header-content .pp{
-
-    font-size: 17px;
-    line-height: 1.6;
-    font-weight: 400;
-    margin-bottom: 39px;
-    color: #212025;
-    margin-bottom: 60px;
-    padding-right: 50px;
-    width: 157%;
-   }
-   header .header-img{
-    margin-right: 100px;
-    
-   
-   }
-   header .header-img img{
-       width: 100%;
-       
-       
-   }
+    header .header-content .hh{
+        font-size: 40px;
+        line-height: 1.2;
+        width: 100%;
+    }
+    header .header-content .pp{
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: #212025;
+        padding-right: 0px;
+        width: 100%;
+    }
+    header .header-img{
+        margin-right: 0px;
+    }
+    header .header-img img{
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        margin-left: 0;
+    }
 }
 
 /*  end ipad screen for nav and header*/
@@ -378,8 +377,7 @@ padding-bottom: 10%;
         height: 680px;
         overflow: hidden;
         position: relative;
-      
-        
+        min-height: 0;
     }
     .gallery .gallery-row .img-single img{
         width: 100%;
@@ -437,20 +435,25 @@ padding-bottom: 10%;
 
     @media screen and (min-width:576px) and (max-width:991px){
         .gallery{
-           height: 1100px;
+           height: auto;
         }
         .gallery .gallery-row{
             flex-wrap: wrap;
         }
         .gallery .gallery-row .img-single{
-            width: 45%;
+            width: 48%;
+            height: 400px;
+        }
+        .gallery .gallery-row .img-single:nth-child(1){
+            width: 100%;
+            height: 400px;
         }
         .gallery .gallery-row .img-single:nth-child(3){
             width: 100%;
         }
         .gallery .gallery-row .img-single:nth-child(3) .gallery-column{
             flex-direction: row;
-            height: 330px;
+            height: 300px;
         }
     
     }
@@ -524,33 +527,28 @@ padding-bottom: 10%;
     
     }
     header .header-content{
-        padding: 0px 140px 0px 0px ;
-       
-        
+        padding: 0;
     }
     header .header-img img {
-        height: 609px;
-        margin-right: 87px;
+        display: none;
     }
     header .header-content .hh{
-    
-    font-size: 30px;
-    padding-right: 140px;
-    width: 100%;
-    text-align: start;
+        font-size: 28px;
+        padding-right: 0;
+        width: 100%;
+        text-align: start;
     }
     header .header-content .pp{
-    
-    width:130%;
-    padding-right: 140px;
-    padding-left: 0px;
-    text-align: start;
-    
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        text-align: start;
+        font-size: 15px;
     }
     
     
     .container{
-        width:fit-content;
+        width: 92%;
     }
     
     #inpChecked:checked +.nav-list{
@@ -672,8 +670,11 @@ padding-bottom: 10%;
         }
     }
     header .header-img img{
-        height:830px;
-        margin-left: 80px;
+        height: auto;
+        max-height: 830px;
+        margin-left: 0;
+        width: 100%;
+        object-fit: contain;
     }
  
 
@@ -684,20 +685,27 @@ padding-bottom: 10%;
 
         @media screen and (max-width:576px){
             /*HEADER MEDIA Q*/
+        header{
+            padding: 30px 15px;
+        }
         header .header-img img{
            display: none;
         }
         header .header-content h1{
-           
-            font-size: 40px;
+            font-size: 32px;
             line-height: 1.2; 
-           
+        }
+        header .header-content p{
+            margin: 30px 0;
+            font-size: 15px;
         }
         header .header-content{
            width: 100%;
-           padding-top: 10%;
-           padding-bottom: 10%;
-        
+           padding: 5% 0;
+        }
+        .btn{
+            padding: 15px 22px;
+            font-size: 14px;
         }
         
         /*end HEADER Media Q*/
@@ -714,30 +722,50 @@ padding-bottom: 10%;
 
 /*meeediaaa Qqq*/
 @media screen and (max-width:575px) {
+    .arrivals{
+        padding-top: 15%;
+        padding-bottom: 8%;
+    }
     .arrivals .section-product{
         width: 100%;
         margin-bottom: 30px;
     }
     .arrivals .row{
         flex-direction: column;
-    
     }
     .arrivals .section-title h2{
-        font-size: 35px;
-        margin-bottom: 12px;     
+        font-size: 30px;
+        margin-bottom: 12px;
+        text-align: center;
     }
-  
+    .section-product .product-caption h3 a{
+        font-size: 18px;
+    }
+    .product-img{
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width:575px){
+    .gallery{
+        padding-bottom: 30px;
+    }
     .gallery .gallery-row{
         flex-direction: column;
+        gap: 10px;
     }
     .gallery .gallery-row .img-single{
         width: 100%;
+        height: 300px;
     }
     .gallery .gallery-row .img-single:nth-child(1){
         width: 100%;
+    }
+    .gallery .gallery-row .img-single:nth-child(3) .gallery-column{
+        gap: 10px;
+    }
+    .gallery .gallery-row .img-single:nth-child(3) .gallery-column .img-single{
+        height: 250px;
     }
 }
 /* End Gallery*/
@@ -864,29 +892,34 @@ bottom: 0;
 
 @media screen and (max-width:575px){
     .populer .row{
-            flex-direction: column;
-        }
+        flex-direction: column;
+        align-items: center;
+    }
     .populer .container{
-        width: 100%;
-        
+        width: 92%;
     }
     .populer .single-populer{
-        width: 90%;
+        width: 100%;
+        margin-bottom: 25px;
     }
     .populer .title{
-        padding: 0px 100px 0px 0px;
+        padding: 0;
+        width: 100%;
     }
     .populer .title h2{
-        font-size: 25px;
+        font-size: 28px;
         text-align: center;
-        justify-content: center;
-        margin-left: 60px;
-        
-
+        margin-left: 0;
     }
     .populer .title p{
-        font-size: 16px;
-        width:137%;
+        font-size: 15px;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .populer .btn2{
+        padding: 16px 24px;
+        font-size: 14px;
     }
 }
 /*startvedio area*/
@@ -968,38 +1001,40 @@ color: #ff2020;
 /*meeediaaa Qqq*/
 @media screen and (max-width:575px){
     .video-area{
-
-        height: 400px;
+        height: 300px;
+    }
+    .video-area .imgs img{
+        height: 100%;
     }
     .video-area .play-btn{
-        top: auto;
+        top: 35%;
     }
-    .cntent-box{
-
-    width: 100%;
-}
+    .play-btn a{
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+    }
+    .video-area .cntent-box{
+        width: 100%;
+    }
     .cntent-box .thump-content {
-        padding: 11px 49px 14px 0px;
+        padding: 15px 20px;
     }
     .cntent-box .thump-content h3{
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
-    margin: 0px;
-    text-transform: uppercase;
-    padding-right: 78px;
-    padding-left: 0px;
-    margin-left: 20px;
-   
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0;
+        text-transform: uppercase;
+        padding: 0;
     }
-
     .cntent-box .thump-content a {
-        font-size: 13px;
-
+        font-size: 16px;
+        margin-right: 0;
     }
     .choce{
-        padding: 20px 0px 20px 0px;
-        
+        padding: 20px 0;
     }
 }
 /*end video area*/
@@ -1061,20 +1096,26 @@ color: #ff2020;
 @media screen and (max-width:575px){
     .choce .row{
         flex-direction: column;
-        padding-left: 20px;
+        padding-left: 0;
     }
-    .choce  .choce-content{
+    .choce .choce-content{
         width: 100%;
         margin-bottom: 8%;
-       
+        text-align: center;
     }
     .choce .choce-content h2{
-        font-size: 29px;
-       
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .choce .choce-content p{
+        font-size: 15px;
+        width: 100%;
     }
     .choce .choce-img{
         width: 100%;
-       
+    }
+    .choce .btn2{
+        margin: 0 auto;
     }
 }
 
@@ -1115,21 +1156,28 @@ color: #ff2020;
 }
 /*meeediaaa Qqq*/
 @media screen and (max-width:575px) {
+    .shop-area{
+        padding-bottom: 50px;
+    }
     .shop-area .single-shop{
         width: 100%;
-        padding: 43px 20px 40px 95px;
+        padding: 30px 25px;
+        text-align: center;
     }
     .shop-area .row{
         flex-direction: column;
-    
+    }
+    .shop-area .single-shop i{
+        font-size: 30px;
+    }
+    .shop-area .single-shop h6{
+        font-size: 16px;
     }
     .shop-area .single-shop p {
-        
-        padding-right: 5%;
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
     }
-
-    
-  
 }
 /*end shoping*/
 /*start footer*/
@@ -1206,18 +1254,73 @@ color: #ff2020;
 }
 
 /*meeediaaa Qqq*/
+@media screen and (min-width:576px) and (max-width:991px){
+    .footer-area .row{
+        flex-wrap: wrap;
+    }
+    .footer-area .single-feat{
+        width: 48%;
+        margin-bottom: 30px;
+    }
+    .footer-area .single-feat .feat-title h4{
+        width: auto;
+        margin-right: 0;
+    }
+    .footer-area .single-feat .feat-title p{
+        width: 90%;
+    }
+    .shop-area .row{
+        flex-wrap: wrap;
+    }
+    .shop-area .single-shop{
+        width: 48%;
+        padding: 30px 20px;
+    }
+    .shop-area .single-shop p{
+        width: 90%;
+    }
+    .populer .single-populer{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    .populer .title{
+        width: 80%;
+    }
+}
+
 @media screen and (max-width:575px) {
-.footer-area .single-feat{
+    .footer-area .single-feat{
         width: 100%;
-        
-       
+        margin-bottom: 20px;
     }
     .footer-area .row{
         flex-direction: column;
-    
     }
-  
-  
+    .footer-area .single-feat img{
+        padding-left: 0;
+    }
+    .footer-area .single-feat .feat-title p{
+        width: 100%;
+        padding-left: 0;
+    }
+    .footer-area .single-feat .feat-title h4{
+        width: auto;
+        margin-right: 0;
+        padding-left: 0;
+    }
+    .footer-area .single-feat .feat-title ul li{
+        padding-left: 0;
+    }
+    .single-feat .copy-right{
+        float: none;
+        text-align: center;
+    }
+    .single-feat .copy-right p{
+        font-size: 14px;
+    }
+    .feat-social{
+        text-align: center;
+    }
 }
 /*end footer*/
 
@@ -1244,3 +1347,161 @@ color: #ff2020;
    
 }
 /* end go to the first */
+
+
+/* ======================================================= */
+/* ============= COMPREHENSIVE RESPONSIVE FIX ============ */
+/* ======================================================= */
+
+/* --- Extra Large Screens (1400px+) --- */
+@media screen and (min-width:1400px){
+    .container{
+        max-width: 1200px;
+    }
+    header .header-content h1{
+        font-size: 80px;
+    }
+}
+
+/* --- Large Tablets / Small Laptops (992px - 1199px) --- */
+@media screen and (min-width:992px) and (max-width:1199px){
+    .container{
+        width: 85%;
+    }
+    header .header-content h1{
+        font-size: 55px;
+    }
+    header .header-content p{
+        font-size: 16px;
+        margin: 40px 0;
+    }
+    header .header-img img{
+        max-height: 650px;
+    }
+    nav .nav-list{
+        margin-right: 30px;
+    }
+    .nav-list .list .list-item{
+        margin-right: 18px;
+    }
+    .arrivals .section-title h2{
+        font-size: 38px;
+    }
+    .populer .title h2{
+        font-size: 38px;
+    }
+    .choce .choce-content h2{
+        font-size: 42px;
+    }
+}
+
+/* --- Tablets (576px - 991px) Additional Fixes --- */
+@media screen and (min-width:576px) and (max-width:991px){
+    header{
+        padding: 30px 20px;
+    }
+    header .row{
+        flex-direction: column;
+        text-align: center;
+    }
+    header .header-content{
+        width: 100%;
+        padding: 0;
+    }
+    header .header-img{
+        width: 60%;
+        margin: 30px auto 0;
+    }
+    .choce .row{
+        align-items: center;
+    }
+    .choce .choce-content{
+        width: 45%;
+    }
+    .choce .choce-content h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .choce .choce-content p{
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .cntent-box .thump-content{
+        padding: 30px 20px;
+    }
+    .cntent-box .thump-content a{
+        margin-right: 30px;
+    }
+}
+
+/* --- Small Phones (max-width: 400px) --- */
+@media screen and (max-width:400px){
+    nav{
+        padding: 3% 2%;
+    }
+    nav .logo{
+        width: 30%;
+    }
+    nav .nav-icon a i{
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    header .header-content h1{
+        font-size: 26px;
+    }
+    header .header-content p{
+        font-size: 14px;
+        margin: 20px 0;
+    }
+    .arrivals .section-title h2{
+        font-size: 24px;
+    }
+    .populer .title h2{
+        font-size: 24px;
+    }
+    .choce .choce-content h2{
+        font-size: 22px;
+    }
+    .gallery .gallery-row .img-single{
+        height: 220px;
+    }
+    .video-area{
+        height: 220px;
+    }
+    .play-btn a{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+    }
+    .cntent-box .thump-content{
+        padding: 10px 15px;
+    }
+    .cntent-box .thump-content h3{
+        font-size: 12px;
+    }
+    .shop-area .single-shop{
+        padding: 20px 15px;
+    }
+    .footer-area .single-feat .feat-title h4{
+        font-size: 18px;
+    }
+}
+
+/* --- Back to Top Responsive --- */
+@media screen and (max-width:575px){
+    .back-to-first .back i{
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        font-size: 16px;
+        right: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+/* --- Image Overflow Protection (all sizes) --- */
+img{
+    max-width: 100%;
+    height: auto;
+}
